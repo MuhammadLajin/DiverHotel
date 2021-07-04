@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title - Diver Hotel</title>
+    <link rel="icon" href="~/Assets/favicon.png" type="image/png">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Bootstrap CSS -->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/vendors/linericon/style.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/vendors/nice-select/css/nice-select.css" rel="stylesheet" />
+
+    <!-- main css -->
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" />
+</head>
+<body>
+    <!--================Header Area =================-->
+    <header class="header_area">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="#"><img src="~/Assets/Logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#banner">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#reserve">Reservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#facility">Divers Facilty</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================Header Area =================-->
+    <!--================Banner Area =================-->
+    <section id="banner" class="banner_area">
+        <div class="booking_table d_flex align-items-center">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h6>Away from monotonous life</h6>
+                    <h2>Relax Your Mind</h2>
+                    <h1>Diver Hotel</h1>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--================Banner Area =================-->
+    <!--================Reservation Area =================-->
+    <section id="reserve" class="facilities_area section_gap">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">
+        </div>
+        <div class="hotel_booking_area position">
+            <div class="container">
+                <div class="hotel_booking_table">
+                    <div class="col-md-3">
+                        <h2>Book<br> Your Room</h2>
+                    </div>
+                    <div class="col-md-9 pb-5">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--================Reservation Area =================-->
+    <!--================ Facilities Area  =================-->
+    <section id="facility" class="facilities_area section_gap">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">
+        </div>
+        <div class="container">
+            <div class="section_title text-center">
+                <h2 class="title_w">Divers Facilities</h2>
+                <p>Who are in extremely love with eco friendly system.</p>
+            </div>
+            <div class="row mb_30">
+                <div class="col-lg-4 col-md-6">
+                    <div class="facilities_item">
+                        <h4 class="sec_h4"><i class="lnr lnr-dinner"></i>Restaurant</h4>
+                        <p>You can lead a horse to water, but you can't make him participate in synchronized diving.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="facilities_item">
+                        <h4 class="sec_h4"><i class="lnr lnr-bicycle"></i>Sports CLub</h4>
+                        <p>You can lead a horse to water, but you can't make him participate in synchronized diving.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="facilities_item">
+                        <h4 class="sec_h4"><i class="lnr lnr-shirt"></i>Swimming Pool</h4>
+                        <p>You can lead a horse to water, but you can't make him participate in synchronized diving.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--================ Facilities Area  =================-->
+    <!--================ About History Area  =================-->
+    <section id="about" class="about_history_area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d_flex align-items-center">
+                    <div class="about_content ">
+                        <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <a href="#" class="button_hover theme_btn_two">Request Custom Price</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid" src="~/Assets/headerPic.jpg" alt="img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ About History Area  =================-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="~/Content/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/js/popper.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Content/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Content/js/mail-script.js"></script>
+    <script src="~/Content/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Content/vendors/nice-select/js/jquery.nice-select.js"></script>
+    <script src="~/Content/js/mail-script.js"></script>
+    <script src="~/Content/js/stellar.js"></script>
+    <script src="~/Content/vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+
+
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

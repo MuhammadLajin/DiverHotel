@@ -1,0 +1,137 @@
+﻿@model DiverHotel.Models.ReservationGuest
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="boking_table">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="row">
+        <div class="col">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { })
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control ipC" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { })
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control ipC" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="col">
+            @Html.LabelFor(model => model.Country, htmlAttributes: new { })
+            @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control ipC" } })
+            @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col">
+            <label for="GuestAdult" class="control-label col-md-2">Gender</label>
+            <div class="input-group book_tabel_item">
+                <select id="GuestAdult" name="Adults" class="wide">
+                    <option data-display="1 Adult" value="1">1 Adult</option>
+                    <option value="2">2 Adult</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Adults, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col">
+            <label for="GuestChild" class="control-label col-md-2">Gender</label>
+            <div class="input-group book_tabel_item">
+                <select id="GuestChild" name="Children" class="wide">
+                    <option data-display="No Children" value="0">No Children</option>
+                    <option value="1">1 Child</option>
+                    <option value="2">2 Childs</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Children, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div><br />
+
+    <div class="row">
+        <div class="col">
+            <label for="RoomType" >Room Type</label>
+            <div class="input-group book_tabel_item">
+                @if (ViewBag.RoomType != null)
+                {
+                    @Html.DropDownList("RoomType", (SelectList)ViewBag.RoomType, htmlAttributes: new { })
+                }
+                @Html.ValidationMessageFor(model => model.RoomType, "", new { @class = "text-danger" })
+            </div>
+            @*@Html.LabelFor(model => model.RoomType, "RoomType", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownList("RoomType", null, htmlAttributes: new { @class = "input-group book_tabel_item" })*@
+            
+        </div>
+
+        <div class="col">
+            <label for="MealPlan">Meal Plan</label>
+            <div class="input-group book_tabel_item">
+                @if (ViewBag.MealPlan != null)
+                {
+                    @Html.DropDownList("MealPlan", (SelectList)ViewBag.MealPlan, htmlAttributes: new { })
+                }
+                @Html.ValidationMessageFor(model => model.MealPlan, "", new { @class = "text-danger" })
+            </div>
+            @*@Html.LabelFor(model => model.MealPlan, "MealPlan", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownList("MealPlan", null, htmlAttributes: new { @class = "input-group book_tabel_item" })*@
+            
+        </div>
+    </div><br />
+    <div class="row">
+        <div class="col">
+            <div class="book_tabel_item">
+                <div class="form-group">
+                    <label for="start">Arrival Date: </label>
+                    <div class="input-group date">
+                        <input class="form-control" type="date" id="start" name="CheckIn">
+                    </div>
+                    @Html.ValidationMessageFor(model => model.CheckIn, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @*@Html.LabelFor(model => model.CheckIn, htmlAttributes: new { @class = "control-label col-md-2 wide" })
+        @Html.EditorFor(model => model.CheckIn, new { htmlAttributes = new { @class = "input-group book_tabel_item" } })
+        @Html.ValidationMessageFor(model => model.CheckIn, "", new { @class = "text-danger" })*@
+        </div>
+
+        <div class="col">
+            <label for="End">Departure Date: </label>
+            <div class="book_tabel_item">
+                <div class="form-group">
+
+                    <div class="input-group date">
+                        <input class="form-control" type="date" id="End" name="Checkout">
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Checkout, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @*@Html.LabelFor(model => model.Checkout, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Checkout, new { htmlAttributes = new { @class = "wide input-group book_tabel_item" } })
+            @Html.ValidationMessageFor(model => model.Checkout, "", new { @class = "text-danger" })*@
+        </div>
+    </div><br />
+
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="book_tabel_item">
+                      <button style="position: absolute; left: 100%" type="submit" class="book_now_btn button_hover">Book Now</button>
+                  </div>
+              </div>
+          </div>
+    </div>
+}
+
+    @*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
